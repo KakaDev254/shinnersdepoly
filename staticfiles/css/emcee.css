@@ -1,0 +1,102 @@
+:root {
+  --red: #001a6e;
+  --maroon: #070707;
+  --orange: #e52020;
+  --blue: #ff2df1;
+}
+
+.emcee-hero {
+  background: url("../emceehero2.jpg") center/cover no-repeat;
+  min-height: 60vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.emcee-hero h1 {
+  font-size: 3rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.icon-box i {
+  font-size: 3rem;
+  color: var(--primary-red);
+}
+
+.section-title {
+  color: var(--red);
+}
+.hexagon-wrapper {
+  width: 550px;
+  aspect-ratio: 1 / 1;
+  margin: auto;
+}
+
+.hexagon {
+  clip-path: polygon(
+    25% 6.7%,
+    75% 6.7%,
+    100% 50%,
+    75% 93.3%,
+    25% 93.3%,
+    0% 50%
+  );
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: #eee;
+  border: 6px solid var(--red);
+  transition: transform 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.hex-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.hexagon:hover .hex-img {
+  transform: scale(1.05);
+}
+
+.hex-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  gap: 1rem;
+}
+
+.hexagon:hover .hex-overlay {
+  opacity: 1;
+}
+
+.hex-overlay a:hover {
+  color: var(--red);
+}
+@media (max-width: 768px) {
+  .hexagon-wrapper {
+    width: 400px;
+  }
+}
+
+/* Small screens (large phones) */
+@media (max-width: 576px) {
+  .hexagon-wrapper {
+    width: 350px;
+  }
+}
+
+/* Extra small screens (small phones) */
+@media (max-width: 400px) {
+  .hexagon-wrapper {
+    width: 250px;
+  }
+}

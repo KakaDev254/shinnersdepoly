@@ -1,0 +1,73 @@
+{% extends "base.html" %} {% load static %} {% block title %}Gallery | SSHINNERS
+EVENTS{% endblock %} {% block content %}
+<link rel="stylesheet" href="{% static 'css/gallery.css' %}" />
+<!-- Hero Section -->
+<div
+  class="gallery-overlay"
+  style="
+    background-image: url('{% static "img/wedding.jpg" %}');
+    background-size: cover;
+    background-position: center;
+  "
+>
+  <h1 class="display-4 fw-bold" style="color: #ea2910">Our Gallery</h1>
+  <p class="lead" style="color: #050408; font-weight: 600">
+    A glimpse into our unforgettable moments
+  </p>
+</div>
+<!-- ====== GALLERY GRID ====== -->
+<section class="container py-5">
+  <div class="row g-4">
+    {% for item in gallery_items %}
+    <div
+      class="col-md-4"
+      data-aos="zoom-in"
+      data-aos-delay="{% widthratio forloop.counter0 1 100 %}"
+    >
+      <div class="gallery-item">
+        <img
+          src="{{ item.image.url }}"
+          alt="{{ item.title }}"
+          class="gallery-img"
+        />
+        <div class="gallery-caption">{{ item.title }}</div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- ====== TEAM-BUILDING ====== -->
+<section class="py-5" style="background-color: #f1f4f6">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="display-6 fw-bold" style="color: #001a6e">
+        Team-Building Highlights
+      </h2>
+      <p class="lead text-muted">
+        Energising activities that strengthen collaboration and morale.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      {% for item in team_items %}
+      <div
+        class="col-lg-4 col-md-6"
+        data-aos="zoom-in"
+        data-aos-delay="{% widthratio forloop.counter0 1 100 %}"
+      >
+        <div class="gallery-item">
+          <img
+            src="{{ item.image.url }}"
+            alt="{{ item.title }}"
+            class="gallery-img"
+          />
+          <div class="gallery-caption">{{ item.title }}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,113 @@
+:root {
+  --red: #001a6e;
+  --maroon: #070707;
+  --orange: #e52020;
+  --blue: #ff2df1;
+}
+
+/* HERO SECTION */
+.donate-hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../img/event_setup.webp") center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+.donate-hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--orange);
+}
+
+.donate-hero-subtitle {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  color: #f0f0f0;
+}
+
+.donate-btn-primary {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--red);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* CSR SECTION */
+.donate-csr-heading {
+  color: var(--red);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.donate-csr-item {
+  margin-bottom: 1.5rem;
+}
+
+.donate-csr-item h5 {
+  font-weight: 600;
+  color: #333;
+}
+
+.donate-csr-item p {
+  color: #555;
+}
+
+/* DONATION FORM */
+.donate-form-heading {
+  color: var(--red);
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.donate-mpesa-box p {
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+}
+
+/* GALLERY SECTION */
+.donate-gallery-heading {
+  color: var(--red);
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.donate-gallery-item h6 {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 768px) {
+  .donate-hero-title {
+    font-size: 2.25rem;
+  }
+
+  .donate-hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .donate-gallery-item {
+    margin-bottom: 2rem;
+  }
+
+  .donate-btn-primary {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .donate-csr-item {
+    text-align: center;
+  }
+
+  .donate-gallery-grid {
+    display: block;
+  }
+}

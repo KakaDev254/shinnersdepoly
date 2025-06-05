@@ -1,0 +1,85 @@
+{% extends "base.html" %} {% load static %} {% block title %}Donate | SHINNERS
+EVENTS{% endblock title %} {% block content %}
+<link rel="stylesheet" href="{% static 'css/donate.css' %}" />
+<!-- ========= HERO ========= -->
+<section class="donate-hero-section">
+  <h1 class="donate-hero-title">Support Our Mission</h1>
+  <p class="donate-hero-subtitle">
+    Join SHINNERS Event in making a lasting impact through our CSR programs.
+  </p>
+  <a href="#donate-form" class="donate-btn-primary">Donate Now</a>
+</section>
+
+<!-- ========= CSR HIGHLIGHTS ========= -->
+<section class="donate-csr-section container py-5">
+  <h2 class="donate-csr-heading text-center">Our Commitment to Society</h2>
+
+  <div class="donate-csr-item">
+    <h5>🎓 Educating Less Fortunate</h5>
+    <p>We sponsor 90 vulnerable students in high school education.</p>
+  </div>
+
+  <div class="donate-csr-item">
+    <h5>🏠 Children's Homes Support</h5>
+    <p>We donate to children’s homes and special schools across Kenya.</p>
+  </div>
+
+  <div class="donate-csr-item">
+    <h5>🎭 Talent Development</h5>
+    <p>We mentor and support youth talents through various events.</p>
+  </div>
+
+  <div class="donate-csr-item">
+    <h5>🎗 Sponsorship of Charity Events</h5>
+    <p>
+      We support events like Boot Cancer Challenge, KU Golf, and Eardrop Kenya.
+    </p>
+  </div>
+</section>
+
+<!-- ========= DONATION OPTIONS ========= -->
+<section
+  id="donate-form"
+  class="donate-form-section container py-5 text-center"
+>
+  <h3 class="donate-form-heading">Choose a Donation Method</h3>
+
+  <!-- PayPal -->
+  <div class="donate-paypal mb-4 text-center">
+    <a
+      href="https://www.paypal.com/donate/?business=your_paypal_email@example.com&currency_code=USD"
+      target="_blank"
+      class="btn btn-danger px-4 py-2"
+    >
+      <i class="bx bxl-paypal me-2"></i>Donate via PayPal
+    </a>
+  </div>
+
+  <!-- M-Pesa -->
+  <div class="donate-mpesa-box bg-light p-4 rounded">
+    <h5>Donate via M-Pesa</h5>
+    <p>Go to <strong>M-Pesa → Lipa na M-Pesa → Paybill</strong></p>
+    <p><strong>Paybill:</strong> 123456</p>
+    <p><strong>Account:</strong> SHINNERSCSR</p>
+  </div>
+</section>
+
+<!-- ========= PAST EVENTS GALLERY ========= -->
+<section class="container py-5">
+  <h3 class="text-center fw-bold mb-4 text-red">
+    Snapshots from Past Charity Events
+  </h3>
+  <div class="row g-4 past-events-gallery">
+    {% for event in charity_events %}
+    <div class="col-md-4">
+      <img
+        src="{{ event.image.url }}"
+        alt="{{ event.title }}"
+        class="img-fluid w-100 rounded"
+      />
+      <h6 class="mt-2">{{ event.title }}</h6>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

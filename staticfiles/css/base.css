@@ -1,0 +1,42 @@
+:root {
+  --red: #001a6e;
+  --maroon: #410445;
+  --orange: #e52020;
+  --blue: #ff2df1;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+}
+
+.navbar {
+  background-color: var(--maroon);
+  /* height: 4rem; */
+}
+
+.navbar-brand,
+.nav-link {
+  color: #fff !important;
+}
+
+.nav-link:hover {
+  color: var(--orange) !important;
+}
+
+.donate-btn {
+  background-color: var(--orange); /* or use a hex code like #FFA725 */
+  color: white;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.donate-btn:hover {
+  background-color: #050505; /* slightly darker for hover effect */
+  color: white;
+}
