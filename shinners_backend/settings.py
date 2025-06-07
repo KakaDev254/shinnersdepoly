@@ -17,6 +17,14 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
+# CLOUDINARY_STORAGE = {
+#     'CLOUD_NAME': os.getenv("CLOUDINARY_CLOUD_NAME"),
+#     'API_KEY': os.getenv("CLOUDINARY_API_KEY"),
+#     'API_SECRET': os.getenv("CLOUDINARY_API_SECRET"),
+# }
+
+
+
 ALLOWED_HOSTS = ['*']
 
 
@@ -30,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
-     "widget_tweaks",
+    'widget_tweaks',
+   
 ]
 
 MIDDLEWARE = [
