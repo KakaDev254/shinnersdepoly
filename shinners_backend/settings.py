@@ -8,8 +8,7 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
+
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv("SECRET_KEY")
@@ -17,11 +16,13 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
-# CLOUDINARY_STORAGE = {
-#     'CLOUD_NAME': os.getenv("CLOUDINARY_CLOUD_NAME"),
-#     'API_KEY': os.getenv("CLOUDINARY_API_KEY"),
-#     'API_SECRET': os.getenv("CLOUDINARY_API_SECRET"),
-# }
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
+}
 
 
 
@@ -39,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'widget_tweaks',
+    'cloudinary',
+    'cloudinary_storage',
    
 ]
 
@@ -129,8 +132,8 @@ STATICFILES_DIRS = [BASE_DIR / 'static']           # dev-time location
 STATIC_ROOT = BASE_DIR / 'staticfiles' 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage" 
 
-MEDIA_URL  = "/media/"
-MEDIA_ROOT = BASE_DIR / "media"
+# MEDIA_URL  = "/media/"
+# MEDIA_ROOT = BASE_DIR / "media"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
